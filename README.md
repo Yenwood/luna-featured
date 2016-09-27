@@ -6,7 +6,7 @@ To install:
 
 Add a "featured" column to the lunathreads table.
 
-Drop the Sanctuary folder into the themes folder and drop moderate.php into the backstage folder (replacing the file already there)
+Drop the Sanctuary folder into the themes folder and drop backstage/moderate.php into the backstage folder (replacing the file already there)
 
 Change theme to "Sanctuary"
 
