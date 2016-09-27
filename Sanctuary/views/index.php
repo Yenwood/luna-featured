@@ -194,7 +194,9 @@ if ($luna_user['first_run'] == '0') {
 						$url = 'thread.php?id='.$thread_id;
 						$by = '<span class="byuser">'.__('by', 'luna').' '.luna_htmlspecialchars($cur_thread['commenter']).'</span> 
 						<hr style="margin-top:2px;margin-bottom:5px;">
-						'.$thread_text;
+						<div class="thread-text">
+						'.$thread_text.'
+						</div>';
 
 						if (!$luna_user['is_guest'] && $luna_config['o_has_commented'] == '1') {
 							if ($cur_thread['has_commented'] == $luna_user['id']) {
