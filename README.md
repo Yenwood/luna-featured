@@ -1,5 +1,5 @@
 # luna-featured
-Featured threads addon for Luna.
+Featured threads addon for Luna. This theme extends Fifteen.
 
 
 To install:
