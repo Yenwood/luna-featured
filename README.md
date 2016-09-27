@@ -4,7 +4,7 @@ Featured threads addon for Luna. This theme extends Fifteen.
 
 To install:
 
-Add a "featured" column to the lunathreads table.
+Add a "featured" column to the threads table. (int, not null)
 
 Drop the Sanctuary folder into the themes folder and drop backstage/moderate.php into the backstage folder (replacing the file already there)
 
