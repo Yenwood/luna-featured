@@ -12,7 +12,7 @@ Change theme to "Sanctuary"
 
 Pictures:
 
-![Front page](http://i.imgur.com/DwyCqQF.png)
+![Front page](http://i.imgur.com/i8ljp7v.png)
 
 ![Featured thread](http://i.imgur.com/6gAVQbc.png)
 
