@@ -216,7 +216,7 @@ if ($luna_user['first_run'] == '0') {
 						$comments_label = _n('comment', 'comments', $cur_thread['num_replies'], 'luna');
 						$views_label = _n('view', 'views', $cur_thread['num_views'], 'luna');
 
-						require get_view_path('thread.php');
+						require get_view_path('featuredthread.php');
 					}
 				?>
 			</div>
