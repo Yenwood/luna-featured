@@ -10,6 +10,16 @@
 include LUNA_ROOT.'include/srand.php';
 
 //
+// Convert string into one suitable for a CSS class
+//
+function classify($string){
+    $classified = str_replace(" ", "", $string);
+    $classified = preg_replace('/[^A-Za-z0-9\-]/', '', $classified);
+        
+    return strtolower($classified);
+}
+
+//
 // Return current timestamp (with microseconds) as a float
 //
 function get_microtime() {

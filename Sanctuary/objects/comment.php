@@ -1,11 +1,8 @@
 <?php
 
-function classify($string){
-    $classified = str_replace(" ", "", $string);
-    $classified = preg_replace('/[^A-Za-z0-9\-]/', '', $classified);
-        
-    return strtolower($classified);
-}
+// resting place of classify()
+// RIP
+// moved to include/functions.php
 
 ?>
 
