@@ -47,6 +47,9 @@ if ($action == 'change_pass') {
 		if ($key == '' || $key != $cur_user['activate_key'])
 			message(__('The specified password activation key was incorrect or has expired. Please re-request a new password. If that fails, contact the forum administrator at', 'luna').' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.');
 		else {
+            $salt = random_pass(8);
+            $password_hash = luna_sha512($cur_user['activate_string'], $salt);
+
 			$db->query('UPDATE '.$db->prefix.'users SET password=\''.$db->escape($cur_user['activate_string']).'\', activate_string=NULL, activate_key=NULL WHERE id='.$id) or error('Unable to update password', __FILE__, __LINE__, $db->error());
 
 			message(__('Your password has been updated. You can now login with your new password.', 'luna'), true);
@@ -284,6 +287,7 @@ if (isset($_POST['update_rank'])) {
 
 	$page_title = array(luna_htmlspecialchars($luna_config['o_board_title']), __('Profile', 'luna'), __('Confirm delete user', 'luna'));
 	define('LUNA_ACTIVE_PAGE', 'profile');
+    include LUNA_ROOT.'header.php';
 	require load_page('header.php');
 
 	require load_page('me-delete.php');
@@ -467,6 +471,7 @@ To change your email address, please visit the following page:
 	$required_fields = array('req_new_email' => __('New email', 'luna'), 'req_password' => __('Password', 'luna'));
 	$focus_element = array('change_email', 'req_new_email');
 	define('LUNA_ACTIVE_PAGE', 'me');
+    include LUNA_ROOT.'header.php';
 	require load_page('header.php');
 
 	require get_view_path('me-change_email.tpl.php');
@@ -854,6 +859,7 @@ To change your email address, please visit the following page:
 
 	$page_title = array(luna_htmlspecialchars($luna_config['o_board_title']), __('Profile', 'luna'), __('Settings', 'luna'));
 	define('LUNA_ACTIVE_PAGE', 'me');
+    include LUNA_ROOT.'header.php';
 	require load_page('header.php');
 	require load_page('me-modals.php');
 	require load_page('settings.php');
